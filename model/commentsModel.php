@@ -26,8 +26,8 @@ class commentsModel
     {
         $date = date('Y-m-d');
 
-        $ajout = $this->db->prepare("INSERT INTO articles(comment,id_user, id_article,date_creation) VALUES(?,?,?,?,?,?)");
-        return $ajout->execute([$comment,$id_user, $id_article,$date]); // true/false
+        $ajout = $this->db->prepare("INSERT INTO comments(comment,id_user, id_article,date_creation) VALUES(?,?,?,?)");
+        return $ajout->execute([$comment, $id_user, $id_article, $date]);
 
     }
 }
