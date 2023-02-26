@@ -15,7 +15,8 @@ class commentsModel
         $sql = "SELECT *
         FROM comments
         INNER JOIN users 
-        ON comments.id_user=users.id_user";
+        ON comments.id_user=users.id_user
+        WHERE comments.id_article=$id";
 
         return  $this->db->query($sql)->fetchAll();
     }

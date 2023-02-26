@@ -53,7 +53,13 @@ class articlesModel
 
     public function deleteArticle($id)
     {
-        $delete = $this->db->prepare("DELETE FROM articles  WHERE id_article=?");
+    $sql=" ALTER TABLE `articles`
+    ADD CONSTRAINT `articles_ibfk_1`
+    FOREIGN KEY (`id_article`) REFERENCES TABLE comments (`id_article`)
+    DELETE articles FROM articles JOIN comments ON articles.id_article = comments.id_article WHERE articles.id_article=?;
+    ";
+    
+        $delete = $this->db->prepare($sql);
         return $delete->execute([$id]);
     }
 

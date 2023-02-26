@@ -36,7 +36,7 @@ switch (@$_GET['p']) {
     case 'article':
         $articles = new articlesController;
 
-        $articles->getArticleById($_GET['id']);
+        $articles->getArticleById(intval($_GET['id']));
         
         
      
@@ -46,7 +46,7 @@ switch (@$_GET['p']) {
 
     case 'categorie':
         $articles = new articlesController;
-        $articles->getArticleByCat($_GET['id']);
+        $articles->getArticleByCat(intval($_GET['id']));
 
         break;
 
@@ -74,9 +74,7 @@ switch (@$_GET['p']) {
 
     case 'delete':
         $article = new articlesController;
-        $article->deleteArticle($_POST['deleteArticle']);
-        $query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
-        header("location:index.php?" . $query_params);
+        $article->deleteArticle(intval($_POST['deleteArticle']));
 
 
         break;
@@ -85,16 +83,11 @@ switch (@$_GET['p']) {
         $comments = new commentsController;
         if (isset($_POST['review'])) {
             $comments->setComments();
-        }else{
-            $comments->formComments();
         }
+      
 
         break;
 
-    case 'comments':
-        $comments = new commentsController;
-        $comments->getComments($id);
-        break;
         
 
      

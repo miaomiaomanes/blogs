@@ -1,8 +1,8 @@
 <p>reviews</p>
 
 <?php foreach ($comments as $comment) { ?>
-
     <div>
+
 
 
         <span><?= $comment['prenom'] ?></span>
@@ -17,6 +17,7 @@
 
 
 
-    </div>
 
-<?php } ?>
+</div>
+
+<?php } ?> 

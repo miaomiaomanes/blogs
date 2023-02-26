@@ -10,7 +10,7 @@
 
         categories:<b>{$article['nom']}</b>
         date de creation:<b>{$article['dateCreation']}</b><br>
-        <span><a href='?p=addCommentForm'>Ajouter comments</a></span>
+       
        
     </div>
     

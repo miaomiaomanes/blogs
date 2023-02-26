@@ -16,8 +16,8 @@ class commentsController
 
     public function getComments($id)
     {
-      $comments= $this->model->getComments($_SESSION['id_article']); // tableaux
-      include("view/commentsReviews.php");
+    return $this->model->getComments($id); // tableaux
+    
     
 
 

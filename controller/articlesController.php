@@ -17,11 +17,13 @@ class articlesController
 
     private $model;
     private $categoriesModel;
+    private $commentsModel;
 
     public function __construct()
     {
         $this->model = new articlesModel;
         $this->categoriesModel = new categoriesModel;
+        $this->commentsModel=new commentsModel;
         
     }
 
@@ -44,10 +46,14 @@ class articlesController
 
     public function getArticleById($id)
     {
+      
         $article = $this->model->getArticleById($id); // tableaux
-
+       
         include('view/articleView.php');
         include('view/formComments.php');
+        $getComments=new commentsController;
+        $comments=$getComments->getComments($id);
+        include('view/commentsReviews.php');
     }
 
     public function getArticleByCat($id)
@@ -72,9 +78,9 @@ class articlesController
         $ajout = $this->model->setArticle($_POST['titre'], $_POST['contenu'], $_POST['image'], $_SESSION['id_user'],$_POST['id_categorie']);
 
         if ($ajout) {
-            echo 'ajoute';
+            //echo 'ajoute';
             
-           // header("location:index.php?p=categorie&id=".$_POST['id_categorie']);
+         header("location:index.php?p=categorie&id=".$_POST['id_categorie']);
         } else {
             $this->formAjoutArticle();
         }
