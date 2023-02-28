@@ -64,16 +64,19 @@ switch (@$_GET['p']) {
         break;
 
     case 'delete':
-        //$query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
-        //header("location:index.php?" . $query_params);
-        header("location:index.php");
+        $query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
+        $redirectUrl = "index.php?" . $query_params;
+        echo "<script>location.href = '$redirectUrl';</script>";
+        
         $article = new articlesController;
         $article->deleteArticle(intval($_POST['deleteArticle']));
         break;
 
     case 'addCommentForm':
         $query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
-        header("location:index.php?" . $query_params);
+        $redirectUrl = "index.php?" . $query_params;
+        echo "<script>location.href = '$redirectUrl';</script>";
+
         $comments = new commentsController;
         if (isset($_POST['review'])) {
             $comments->setComments();

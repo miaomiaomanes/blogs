@@ -78,12 +78,11 @@ class articlesController
 
     public function setArticle()
     {
-       
-
-        $ajout = $this->model->setArticle($_POST['titre'], $_POST['contenu'], $_POST['image'], $_SESSION['id_user'],$_POST['id_categorie']);
+       $ajout = $this->model->setArticle($_POST['titre'], $_POST['contenu'], $_POST['image'], $_SESSION['id_user'],$_POST['id_categorie']);
 
         if ($ajout) {
-            header("location:index.php?p=categorie&id=".$_POST['id_categorie']);
+            $redirectUrl = "index.php?p=categorie&id=".$_POST['id_categorie'];
+            echo "<script>location.href = '$redirectUrl';</script>";
         } else {
             $this->formAjoutArticle();
         }

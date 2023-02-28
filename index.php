@@ -12,7 +12,6 @@ $categories=new categoriesController;
 $menu=$categories->getCategories();
 
 
-include('controller/location.php');
 include('view/header.php');
 include('controller/route.php');
 include('view/footer.php');
