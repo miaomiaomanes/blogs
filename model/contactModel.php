@@ -12,10 +12,10 @@ class contactModel
     }
 
 
-    public function setConact($userID,$nom,$prenom,$email,$message_text)
+    public function setConact($nom,$prenom,$email,$message_text)
     {
-        $ajout= $this->db->prepare("INSERT INTO Contact(userID,nom,prenom,email,message_text) VALUES(?,?,?,?,?)");      
-        return $ajout->execute([$userID, $nom,$prenom,$email,$message_text]); // true/false
+        $ajout= $this->db->prepare("INSERT INTO Contact(nom,prenom,email,message_text) VALUES(?,?,?,?)");      
+        return $ajout->execute([$nom,$prenom,$email,$message_text]); // true/false
         
     }
 

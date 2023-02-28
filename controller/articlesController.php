@@ -36,24 +36,29 @@ class articlesController
         include('view/articlesView.php');
     }
 
-    public function getDernierArticles()
-    {
-        $dernierArticles = $this->model->getDernierArticles();
-        include('view/dernierArticlesViews.php');
-    }
+    // public function getDernierArticles()
+    // {
+    //      $this->model->getDernierArticles();
+       
+    // }
 
 
 
     public function getArticleById($id)
     {
       
-        $article = $this->model->getArticleById($id); // tableaux
+        $article = $this->model->getArticleById($id); 
+        $dernierArticles = $this->model->getDernierArticles();// tableaux
        
-        include('view/articleView.php');
-        include('view/formComments.php');
         $getComments=new commentsController;
         $comments=$getComments->getComments($id);
-        include('view/commentsReviews.php');
+        include('view/articleViewFullPage.php');
+       
+    }
+
+    public function getArticleByIdFullPage()
+    {
+
     }
 
     public function getArticleByCat($id)
@@ -78,9 +83,7 @@ class articlesController
         $ajout = $this->model->setArticle($_POST['titre'], $_POST['contenu'], $_POST['image'], $_SESSION['id_user'],$_POST['id_categorie']);
 
         if ($ajout) {
-            //echo 'ajoute';
-            
-         header("location:index.php?p=categorie&id=".$_POST['id_categorie']);
+            header("location:index.php?p=categorie&id=".$_POST['id_categorie']);
         } else {
             $this->formAjoutArticle();
         }

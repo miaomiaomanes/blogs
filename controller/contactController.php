@@ -20,7 +20,7 @@ class contactController
     public function setContact()
     {
         
-        $ajout = $this->model->setConact($_POST['userID'],$_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['message_text']);
+        $ajout = $this->model->setConact($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['message_text']);
         if ($ajout) {
             echo "sucessfully send your contact";
         } else {

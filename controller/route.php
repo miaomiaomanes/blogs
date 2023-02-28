@@ -21,26 +21,17 @@ switch (@$_GET['p']) {
         }
         break;
 
-
-
     case 'index':
         $articles = new articlesController;
         //$articles->getArticles();
         $articles->getArticlesByCatId();
-        $articles->getDernierArticles();
-
-
-
+        //$articles->getDernierArticles();
         break;
-        // index.php?p=article&id=1  
+        // index.php?p=article&id=1
+
     case 'article':
         $articles = new articlesController;
-
         $articles->getArticleById(intval($_GET['id']));
-        
-        
-     
-
         break;
         // index.php?p=article&id=1
 
@@ -69,35 +60,30 @@ switch (@$_GET['p']) {
         break;
     case 'deconnexion':
         $_SESSION = [];
-        header("location:index.php");
+        // header("location:index.php");
         break;
 
     case 'delete':
+        //$query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
+        //header("location:index.php?" . $query_params);
+        header("location:index.php");
         $article = new articlesController;
         $article->deleteArticle(intval($_POST['deleteArticle']));
-
-
         break;
 
     case 'addCommentForm':
+        $query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
+        header("location:index.php?" . $query_params);
         $comments = new commentsController;
         if (isset($_POST['review'])) {
             $comments->setComments();
         }
-      
-
         break;
-
-        
-
-     
-
-
 
     default:
         $articles = new articlesController;
         $articles->getArticlesByCatId();
-        $articles->getDernierArticles();
+        
         break;
 }
 
