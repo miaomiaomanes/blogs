@@ -1,5 +1,5 @@
-</div>
-<footer class="footer p-20 bg-neutral text-neutral-content pt-1 mt-auto ">
+
+<footer class=" footer mt-20 bg-neutral text-neutral-content pt-5  ">
   <div>
     <span class="footer-title">Services</span> 
     <a class="link link-hover">Branding</a>

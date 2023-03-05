@@ -49,7 +49,6 @@ class articlesController
       
         $article = $this->model->getArticleById($id); 
         $dernierArticles = $this->model->getDernierArticles();// tableaux
-       
         $getComments=new commentsController;
         $comments=$getComments->getComments($id);
         include('view/articleViewFullPage.php');

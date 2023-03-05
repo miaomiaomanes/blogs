@@ -1,3 +1,4 @@
+
 <div class='col-span-2 pr-20 grow'>
     <h2 class='  text-4xl mb-10 font-semibold leading-10 text-gray-900 group-hover:text-gray-600'><?= $article['titre'] ?></h2>
     <img class='min-w-full' src='<?= $article['image'] ?>'>
