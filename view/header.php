@@ -71,7 +71,7 @@
                         </button>
 
                         <!-- Profile dropdown -->
-                        <div class="relative ml-3" id="profileDropDown" onclick="profileDropdown">
+                        <div class="relative ml-3" id="profileDropdown-id" onclick="profileDropdown()">
                             <div>
                                 <button type="button" class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span class="sr-only">Open user menu</span>
@@ -114,8 +114,8 @@
             </div>
 
             <script>
-function ProfileDropdown() {
-  var x = document.getElementById("profileDropdown");
+function profileDropdown() {
+  var x = document.getElementById("profileDropdown-id");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -128,7 +128,7 @@ function ProfileDropdown() {
 
             <!-- Mobile menu, show/hide based on menu state. -->
             <div class="sm:hidden" id="mobile-menu" >
-                <div class="space-y-1 px-2 pt-2 pb-3" id="menuMobile" onclick="menuMobile()">
+                <div class="space-y-1 px-2 pt-2 pb-3" id="menuMobile-id" onclick="menuMobile()">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <?php foreach ($menu as $categorie) { ?>
                         <a class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium" href="?p=categorie&id=<?= $categorie['id_categorie'] ?>"> <?= $categorie['nom'] ?></a>
@@ -145,12 +145,12 @@ function ProfileDropdown() {
 
         <script>
 function menuMobile() {
-    console.log("JKDJDJJD");
-  var x = document.getElementById("menuMobile");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
+  var x = document.getElementById("menuMobile-id");
+//   console.log("JKDJDJJD", x.style.display === "block");
+  if (x.style.display !== "block") {
     x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
 </script>
