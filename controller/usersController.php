@@ -37,7 +37,9 @@ class usersController
             $_SESSION['email'] = $user['email'];
             $_SESSION['id_user'] = $user['id_user'];
 
-             header("Location: index.php"); //redirection vers index.php
+            
+             $redirectUrl = "index.php";
+             echo "<script>location.href = '$redirectUrl';</script>";//redirection vers index.php
         } else {
             $this->formConnexion();
         }
@@ -48,7 +50,8 @@ class usersController
 
         $ajout = $this->model->setUser($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['tel'], password_hash($_POST['mdp'], PASSWORD_DEFAULT));
         if ($ajout) {
-            header("location:index.php?p=connexion");
+            $redirectUrl = "index.php?p=connexion";
+            echo "<script>location.href = '$redirectUrl';</script>";
         } else {
             $this->formInscription();
         }

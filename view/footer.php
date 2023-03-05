@@ -1,4 +1,5 @@
-<footer class="footer p-10 bg-neutral text-neutral-content">
+</div>
+<footer class="footer p-20 bg-neutral text-neutral-content pt-1 mt-auto ">
   <div>
     <span class="footer-title">Services</span> 
     <a class="link link-hover">Branding</a>
@@ -20,5 +21,6 @@
     <a class="link link-hover">Cookie policy</a>
   </div>
 </footer>
+
 </body>
 </html>

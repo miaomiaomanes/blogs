@@ -1,4 +1,4 @@
-<div class="bg-white py-2 sm:py-5">
+<div class="bg-white py-2 sm:py-5 g">
     <div class="mx-auto max-w-7xl ">
         <div class="mx-auto max-w-2xl lg:mx-0">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Welcome to Children News</h2>
@@ -23,7 +23,11 @@
                         </h3>
 
                         <div class="relative mt-5 sm:mt-20 sm:pt-5 text-sm leading-6 text-gray-600 line-clamp-3">
+                        <?php if (isset($_SESSION['id_role'])) { ?>
                             <a class="badge badge-outline" href="?p=article&id=<?= $article['id_article'] ?>">voir plus....</a>
+                        <?php }else{ ?>
+                            <a class="badge badge-outline" href="?p=connexion">voir plus....</a>
+                            <?php } ?>
                             <?php if (isset($_SESSION['id_role']) && $_SESSION['id_role'] == 1) { ?>
                                 <form action="?p=delete" method="post" class="badge badge-outline badge-secondary">
                                     <input type="hidden" value="<?= $article['id_article'] ?>" name="deleteArticle" id="deteleArticle">

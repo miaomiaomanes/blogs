@@ -60,7 +60,8 @@ switch (@$_GET['p']) {
         break;
     case 'deconnexion':
         $_SESSION = [];
-        // header("location:index.php");
+        $redirectUrl = "index.php";
+        echo "<script>location.href = '$redirectUrl';</script>";
         break;
 
     case 'delete':

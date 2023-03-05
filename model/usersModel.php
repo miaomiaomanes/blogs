@@ -30,6 +30,7 @@ class usersModel
         return $ajout->execute([$nom,$prenom,$email,$tel,$mdp]); // true/false
         
     }
+  
 
 
 
