@@ -81,8 +81,6 @@ class articlesController
 
     public function fileUpload()
     {
-        //  var_dump($_FILES['fichier']);
-
         $fichier = explode('.', $_FILES['image']['name']);
      
         $extension = end($fichier); // recuperer l'extention du fichier ex : jpj png pdf ...
