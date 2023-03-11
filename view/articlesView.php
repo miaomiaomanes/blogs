@@ -14,7 +14,7 @@
                         <a href="?p=categorie&id=<?= $article['id_categorie'] ?>" class="relative z-10 rounded-full bg-gray-50 py-1.5 px-3 font-medium text-gray-600 hover:bg-gray-100"><?= $article['nom'] ?></a>
                     </div>
                     <div class="group relative">
-                        <figure class="max-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"><img class='h-full w-full' src=<?= $article['image'] ?>></figure>
+                        <figure class="sm:mr-10 max-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"><img class='h-full w-full' src=<?= $article['image'] ?>></figure>
                         <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                             <a href="?p=article&id=<?= $article['id_article'] ?>">
                                 <span class="absolute"> <?= $article['titre'] ?></span>

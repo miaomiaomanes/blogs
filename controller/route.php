@@ -50,6 +50,12 @@ switch (@$_GET['p']) {
             $user->formInscription();
         }
         break;
+
+    case 'profile':
+        include('view/profile.php');
+        break;
+
+
     case 'connexion':
         $user = new usersController;
         if (isset($_POST['email'])) {
@@ -68,7 +74,7 @@ switch (@$_GET['p']) {
         $query_params = parse_url($_SERVER['HTTP_REFERER'])["query"];
         $redirectUrl = "index.php?" . $query_params;
         echo "<script>location.href = '$redirectUrl';</script>";
-        
+
         $article = new articlesController;
         $article->deleteArticle(intval($_POST['deleteArticle']));
         break;
@@ -87,7 +93,7 @@ switch (@$_GET['p']) {
     default:
         $articles = new articlesController;
         $articles->getArticlesByCatId();
-        
+
         break;
 }
 

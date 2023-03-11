@@ -36,6 +36,7 @@ class usersController
             $_SESSION['id_role'] = $user['id_role'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['id_user'] = $user['id_user'];
+            $_SESSION['password']=$user['mdp'];
 
             
              $redirectUrl = "index.php";

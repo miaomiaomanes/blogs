@@ -6,7 +6,7 @@
             <form action="" method="post">
 
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="" method="post"  enctype="multipart/form-data">
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Title</span>
@@ -25,7 +25,7 @@
                             <label class="label">
                                 <span class="label-text">Image</span>
                             </label>
-                            <input type="text" name="image" id="image" placeholder="Title" class="input input-bordered" />
+                            <input type="file" name="image" id="image"  class="file-input file-input-bordered file-input-accent " />
                         </div>
 
                         <div class="form-control">

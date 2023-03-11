@@ -8,7 +8,7 @@
             <form action="" method="post">
 
                 <div class="card-body">
-                    <form action="" method="post">
+                   
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Firs Name</span>
@@ -34,7 +34,7 @@
                             <label class="label">
                                 <span class="label-text">Message</span>
                             </label>
-                            <textarea class='border-solid border-2 ' name="message_text" id="message_text" cols="60" rows="5"></textarea>
+                            <textarea class='border-solid border-2 ' name="message_text" id="message_text"  rows="5"></textarea>
                         </div>
 
                 

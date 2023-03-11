@@ -6,7 +6,7 @@
             <form action="" method="post">
 
                 <div class="card-body">
-                    <form action="" method="post">
+                    
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">First Name</span>
